@@ -1,0 +1,32 @@
+#繼承
+'''基底類別一定要先宣告，衍生類別繼承基底類別公有屬性與函式
+同時也有屬於自己的屬性與函式
+class FatherClass():#基底類別
+    BARABARA
+class SunClass(FatherClass):#衍生類別
+    BARABARA
+'''
+class Bank():
+    def __init__(self,uname):
+        self.name=uname
+        self.balance=0
+        self.title='Taipei Bank'
+    def save_money(self,money):
+        self.balance+=money
+        print('存款',money,'元完成')
+    def withdraw_money(self,money):
+        self.balance-=money
+        print('取款',money,'元完成')
+    def get_balance(self):
+        print(self.name.title(),'目前餘額',self.balance)
+
+class shilin_bank(Bank):
+    pass
+
+x=input('Input username:')
+hungbank=shilin_bank(x)
+money=int(input("Input savemoney:"))
+hungbank.save_money(money)
+money=int(input("Input withdrawmoney:"))
+hungbank.withdraw_money(money)
+hungbank.get_balance()
